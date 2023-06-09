@@ -1,13 +1,262 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body{
+  position: relative;
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Default classes */
+a {
+  text-decoration: none;
+  color: #000000;
 }
+
+.forSEO {
+  display: none;
+  opacity: 0;
+}
+
+.mainPadding {
+  padding: 0 23.75rem;
+}
+
+.icon-arrow {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  transform: rotate(45deg);
+  margin: 0 0.3rem;
+}
+
+/* Header  */
+.upperHeader {
+  padding: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #E9E9E9;
+}
+
+.search-container {
+  position: absolute;
+  right: 23.75rem;
+  cursor: pointer;
+}
+
+.search-container input {
+  width: 50vw;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 2px 3px grey,
+              -2px -2px 3px grey;
+  outline: none;
+}
+
+.icon-close {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.icon-close:before,
+.icon-close:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 2px;
+  background-color: black;
+  transform-origin: center;
+}
+
+.icon-close:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.icon-close:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.icon-search,
+.icon-close {
+  padding-left: 1rem;
+}
+
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #E9E9E9;
+  background-color: white;
+  transition: transform 0.5s ease-in;
+}
+
+.stickyHeader.hidden {
+  transform: translateY(-100%);
+}
+
+.menu {
+  list-style-type: none;
+}
+
+.menu__item {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: capitalize;
+  display: inline-block;
+  position: relative;
+}
+
+.menu__item > a {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem;
+}
+
+.submenu__item {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.813rem;
+  color: #000000;
+  list-style: none;
+  border-bottom: 1px solid #E9E9E9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.submenu__item:last-child {
+  border-bottom: none;
+}
+
+.submenu__item a {
+  display: block;
+  white-space: nowrap;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease-in;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 11rem;
+  background-color: #fff;
+  border: 1px solid #E9E9E9;
+  z-index: 1;
+  padding: 1.25rem;
+}
+
+.menu__item:hover .submenu {
+  display: block;
+}
+
+.submenu__item .icon-arrow {
+  transform: rotate(-45deg) !important;
+}
+
+.submenu__item:hover .submenu__link{
+  padding-left: 0.5rem;
+  color: #969696;
+}
+
+
+/* Main section css */
+.main {
+  padding: 3rem 23.75rem 10rem;
+}
+
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 40px;
+  row-gap: 3rem;
+}
+
+.post {
+  flex: 1 0 33.33%;
+  max-width: 360px;
+}
+
+/* Single post css */
+.post__categ {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.813rem;
+  color: #EB0028;
+}
+
+.post__categ,
+.post__title,
+.post__meta,
+.post__description {
+  margin-top: 1rem;
+}
+
+.post__title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.post__meta {
+  display: flex;
+  align-items: center;
+}
+
+.icon-Oval {
+  font-size: 3px;
+}
+
+.post__author,
+.post__date,
+.post__views,
+.icon-Oval  {
+  margin-right: 5px;
+}
+
+.post__author,
+.post__date,
+.post__views {
+  font-size: 0.75rem;
+}
+
+.post__author {
+  font-weight: 500;
+}
+
+.post__date,
+.post__views {
+  font-weight: 400;
+  color: #9B9B9B;
+}
+
+.post__description {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #929292;
+  
+}
+
+
