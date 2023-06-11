@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-function Post({ post }) {
+function Post({ handlePostClick, post }) {
   return (
-    <div className='post'>
+    <div className='post' onClick={() => handlePostClick(post)}>
         <img src={post.img} srcSet={`${post.img_2x} 2x`} alt="post img" />
         <p className='post__categ'>{post.tags}</p>
         <h3 className='post__title'>{post.title}</h3>
@@ -18,4 +18,4 @@ function Post({ post }) {
   )
 }
 
-export default Post
+export default Post;

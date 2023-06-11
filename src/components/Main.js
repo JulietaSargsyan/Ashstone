@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Post from './Post';
 
-function Main({ inputValue }) {
+function Main({ handleInputChange }) {
   const [postsData, setPostsData]       = useState([]);
   const [isLoading, setIsLoading]       = useState(true);
   const [searchTerm, setSearchTerm]     = useState('');
@@ -20,20 +20,20 @@ function Main({ inputValue }) {
           });
   }, [])
 
-  const handleSearch = () => {
-    setSearchTerm(searchTerm);
-    console.log(searchTerm);
-    if(searchTerm) {
-      const newPostsList = postsData && postsData.filter((post) => {
-        console.log(Object.values(post)); 
-        setSearchResult(newPostsList)
-      })
-    }
-  }
+  // const handleSearch = () => {
+  //   setSearchTerm(searchTerm);
+  //   console.log(searchTerm);
+  //   if(searchTerm) {
+  //     const newPostsList = postsData && postsData.filter((post) => {
+  //       console.log(Object.values(post)); 
+  //       setSearchResult(newPostsList)
+  //     })
+  //   }
+  // }
 
-  useEffect(() => {
-      handleSearch();
-  })
+  // useEffect(() => {
+  //     handleSearch();
+  // })
 
   if (isLoading) {
     return <div>Loading...</div>;
