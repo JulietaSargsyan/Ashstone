@@ -6,7 +6,6 @@ function Header({ handleSearchValue, handleMobileMenu, mobileMenu }) {
   const [searchBar, setSearchBar]         = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  // const [mobileMenu, setMobileMenu]       = useState(false);
   const inputRef = useRef(null);
 
   //Set input bar focused when user click on search icon
@@ -35,6 +34,7 @@ function Header({ handleSearchValue, handleMobileMenu, mobileMenu }) {
       };
   }, [prevScrollPos]);
 
+  //Open/close search-bar
   const toggleSearchBar = function () {
       setSearchBar(!searchBar);
   }
@@ -60,66 +60,72 @@ function Header({ handleSearchValue, handleMobileMenu, mobileMenu }) {
                             placeholder='Search...' 
                             onChange={handleInputChange}
                           />)} 
-          <span className="icon-search" onClick={(() => {
-            toggleSearchBar();
-            handleSearchValue("") })}></span>
+          <span 
+              className="icon-search" 
+              onClick={(() => {
+                  toggleSearchBar();
+                  handleSearchValue("") })}>
+          </span>
         </div>
       </div>
       <div className={`stickyHeader mainPadding ${isMenuVisible ? '' : 'hidden'} ${mobileMenu ? '' : 'mobileStickyHeader'}`}>
-        <a href="#home" className='mobileOnly mobileLogo'><img src={logo} alt="logotype" /><span className='icon-close' onClick={() => handleMobileMenu(false)}></span></a>
+        <a href="#home" className='mobileOnly mobileLogo'>
+          <img src={logo} alt="logotype" />
+          <span className='icon-close' onClick={() => handleMobileMenu(false)}></span>
+        </a>
         <ul className="menu">
           <li className='menu__item'>
             <a href="#demos">demos<span className='icon-arrow'></span></a>
             <ul className="submenu">
-              <li className='submenu__item'><a className='submenu__link' href="#">post header</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">post layout</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">share buttons</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">gallery post</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">video post</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#***">post header</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#***">post layout</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#*">share buttons</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#**">gallery post</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#****">video post</a><span className='icon-arrow'></span></li>
             </ul>
           </li>
           <li className='menu__item'>
-            <a href="#">post<span className='icon-arrow'></span></a>
+            <a href="#post">post<span className='icon-arrow'></span></a>
             <ul className="submenu">
-              <li className='submenu__item'><a className='submenu__link' href="#">post header</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">post layout</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">share buttons</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">gallery post</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">video post</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#***">post header</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#***">post layout</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#*">share buttons</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#**">gallery post</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#****">video post</a><span className='icon-arrow'></span></li>
             </ul>
           </li>
           <li className='menu__item'>
-            <a href="#">features<span className='icon-arrow'></span></a>
+            <a href="#features">features<span className='icon-arrow'></span></a>
             <ul className="submenu">
-              <li className='submenu__item'><a className='submenu__link' href="#">post header</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">post layout</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">share buttons</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">gallery post</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">video post</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#***">post header</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#***">post layout</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#*">share buttons</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#**">gallery post</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#****">video post</a><span className='icon-arrow'></span></li>
             </ul>
           </li>
           <li className='menu__item'>
-            <a href="#">categories<span className='icon-arrow'></span></a>
+            <a href="#categories">categories<span className='icon-arrow'></span></a>
             <ul className="submenu">
-              <li className='submenu__item'><a className='submenu__link' href="#">post header</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">post layout</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">share buttons</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">gallery post</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">video post</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#***">post header</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#***">post layout</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#*">share buttons</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#**">gallery post</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#****">video post</a><span className='icon-arrow'></span></li>
             </ul>
           </li>
           <li className='menu__item'>
-            <a href="#">shop<span className='icon-arrow'></span></a>
+            <a href="#shop">shop<span className='icon-arrow'></span></a>
             <ul className="submenu">
-              <li className='submenu__item'><a className='submenu__link' href="#">post header</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">post layout</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">share buttons</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">gallery post</a><span className='icon-arrow'></span></li>
-              <li className='submenu__item'><a className='submenu__link' href="#">video post</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#***">post header</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#***">post layout</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#*">share buttons</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#**">gallery post</a><span className='icon-arrow'></span></li>
+              <li className='submenu__item'><a className='submenu__link' href="#****">video post</a><span className='icon-arrow'></span></li>
             </ul>
           </li>
           <li className='menu__item'>
-            <a href="#">buy now</a>
+            <a href="#buyNow">buy now</a>
           </li>
         </ul>
       </div>
