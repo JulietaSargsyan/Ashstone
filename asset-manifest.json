@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Ashstone/static/css/main.9c21cb5c.css",
+    "main.js": "/Ashstone/static/js/main.fd9753c9.js",
+    "static/media/Logotype.svg": "/Ashstone/static/media/Logotype.1f7d6f7902153b6d6a401a6f1a2ea311.svg",
+    "static/media/icomoon.svg?jhkew2": "/Ashstone/static/media/icomoon.876b174b512be35a5222.svg",
+    "static/media/icomoon.eot?jhkew2": "/Ashstone/static/media/icomoon.58a41161dc4694d58963.eot",
+    "static/media/icomoon.woff?jhkew2": "/Ashstone/static/media/icomoon.1578cd31caf8d4b87896.woff",
+    "static/media/icomoon.ttf?jhkew2": "/Ashstone/static/media/icomoon.10401c0f3a2cc3eb7230.ttf",
+    "index.html": "/Ashstone/index.html",
+    "main.9c21cb5c.css.map": "/Ashstone/static/css/main.9c21cb5c.css.map",
+    "main.fd9753c9.js.map": "/Ashstone/static/js/main.fd9753c9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c21cb5c.css",
+    "static/js/main.fd9753c9.js"
+  ]
+}
